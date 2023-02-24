@@ -1,0 +1,18 @@
+{
+  "dashboard": {
+    "projects": {
+      "Back_to_My_Projects": "Back to My Projects",
+      "Content": "Content",
+      "Collaboration": "Collaboration",
+      "Assignments": "Assignments",
+      "Add_Ons": "Add-Ons",
+      "Settings": "Settings",
+      "documents": {
+        "About": "About",
+        "Activity": "Activity",
+        "Export_Data": "Export Data",
+        "Project_Members": "Project Members"
+      }
+    }
+  }
+}

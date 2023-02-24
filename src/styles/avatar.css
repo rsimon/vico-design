@@ -1,0 +1,51 @@
+/** Avatar squircle clip path: https://codepen.io/nklunder/pen/ZrxbZO **/
+.avatar {
+  background: #fff;
+  clip-path: url(#squircle);
+  display: inline-block;
+  height: 42.5px;
+  position:relative;
+  width: 42.5px;
+}
+
+.avatar-image,
+.avatar-fallback {
+  clip-path: url(#squircle);
+  height: 38px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  width: 38px;
+}
+
+.avatar-image {
+  object-fit: cover;
+}
+
+.avatar-fallback {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-weight: 700;
+  font-size: var(--font-small);
+  justify-content: center;
+}
+
+.avatar-list {
+  margin-left: -2px;
+}
+
+.avatar-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.avatar-list li {
+  display: inline-block;
+}
+
+.avatar-list li + li {
+  margin-left: -9px;
+}
+

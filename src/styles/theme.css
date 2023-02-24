@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import './avatar.css';
+@import './button.css';
+@import './dropdown.css';
+@import './markdown.css';
+
+:root{
+  /* Colors */
+  --cravensworth-900: #130a36; /* dashboard sidebar background */
+  --cravensworth-800: #2d1e66; /* primary button border */
+  --cravensworth-700: #3d3269; /* primary button background */
+  --cravensworth-500: #594e85; /* primary button hover background */
+  --cravensworth-300: #b5a2f7; /* dashboard sidebar tab indicator */
+  --cravensworth-200: #e4e2ed; /* active menu option background */
+
+  --link-blue: #3366cc;
+  
+  --gray-800: #202125; /* dark font */
+  --gray-600: #5d5d5d; /* button text color */
+  --gray-500: #797979; /* light font */
+  --gray-400: #cacaca; /* button border */ 
+  --gray-300: #d9d9d9; /* light section border */
+  --gray-100: #f6f6f6; /* bright page background */
+  --gray-50:  #fafafa; /* table row background */
+
+  /* Font */
+  --font-small: 0.875em;
+
+  /* Other */
+  --border-radius: 5px;
+}
+
+html, body {
+  background-color: var(--gray-100);
+  color: var(--gray-800);
+  font-family: 'Public Sans', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 160%;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--cravensworth-500);
+}
+
+h1 {
+  font-family: Poppins;
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 0.02ch;
+  margin: 0;
+  padding: 0.3em 0;
+}
+
+p {
+  margin: 0;
+  padding: 0 0 0.6em 0;
+}
+
+svg {
+  height: 18px;
+  vertical-align: text-bottom;
+}
+
+svg.defs {
+  position: absolute;
+}

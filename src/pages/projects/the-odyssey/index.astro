@@ -1,0 +1,227 @@
+---
+import { Icon } from 'astro-iconify';
+import { t } from 'i18next';
+import { AvatarList, LayoutToggle } from '@components/common';
+import DocumentTable from '@components/dashboard/DocumentTable.astro';
+import { ActivityChart } from '@components/dashboard/projects/ActivityChart';
+import ProjectDetailsLayout from '@layouts/dashboard/ProjectDetailsLayout.astro';
+import { Content as Readme } from './readme.md';
+
+const project = {
+
+  title: 'The Odyssey',
+
+  slug: 'the-odyssey',
+
+  tagline: 'Annotation exercises for The Odyssey, fall 2023 semester.'
+
+};
+
+const collaborators = [{
+  id: 'aboutgeo',
+  fullname: 'Rainer Simon'
+},{
+  id: 'colmtuite',
+  fullname: 'Colm Tuite',
+  avatarUrl: 'https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80'
+},{
+  id: 'jamie',
+  fullname: 'Jamie Folsom'
+},{
+  id: 'lorin',
+  fullname: 'Lorin Jameson'
+},{
+  id: 'ben',
+  fullname: 'Ben Silverman'
+}];
+
+const activity = [
+  {
+    "date": "2022-08-21T00:00:00+00:00",
+    "value": 1
+  },
+  {
+    "date": "2022-11-28T00:00:00+00:00",
+    "value": 0
+  },
+  {
+    "date": "2022-12-05T00:00:00+00:00",
+    "value": 0
+  },
+  {
+    "date": "2022-12-12T00:00:00+00:00",
+    "value": 1
+  },
+  {
+    "date": "2022-12-19T00:00:00+00:00",
+    "value": 0
+  },
+  {
+    "date": "2022-12-26T00:00:00+00:00",
+    "value": 0
+  },
+  {
+    "date": "2023-01-02T00:00:00+00:00",
+    "value": 0
+  },
+  {
+    "date": "2023-01-09T00:00:00+00:00",
+    "value": 18
+  },
+  {
+    "date": "2023-01-16T00:00:00+00:00",
+    "value": 0
+  },
+  {
+    "date": "2023-01-23T00:00:00+00:00",
+    "value": 1
+  }
+];
+---
+<ProjectDetailsLayout active="content" project={project}>
+  <div class="container">
+    <div class="documents">
+      <article class="readme markdown">
+        <Readme />
+      </article>
+
+      <div class="actions">
+        <LayoutToggle client:load />
+      </div>
+
+      <DocumentTable />
+    </div>
+
+    <aside>
+      <section class="add">
+        <button class="primary">
+          <Icon name="ph:plus-bold" /> 
+          <span>Add Documents</span>
+        </button>
+      </section>
+
+      <section class="about">
+        <h1>{t('dashboard.projects.documents.About')}</h1>
+        <button class="unstyled settings">
+          <Icon name="ph:gear" />
+        </button>
+        
+        <p>{project.tagline}</p>
+        <a href="#">
+          <Icon name="ph:link-bold" />{`${Astro.url.host}/projects/${project.slug}`}
+        </a>
+      </section>
+
+      <section class="members">
+        <h1>{t('dashboard.projects.documents.Project_Members')}</h1>
+        <AvatarList client:load users={collaborators} />
+      </section>
+
+      <section class="activity">
+        <h1>{t('dashboard.projects.documents.Activity')}</h1>
+        <ActivityChart width={270} height={75} data={activity} />
+      </section>
+
+      <section class="export">
+        <button>
+          <Icon name="ph:download-simple" />
+          <span>{t('dashboard.projects.documents.Export_Data')}</span>
+        </button>
+      </section>
+    </aside>
+  </div>
+  
+  <svg class="defs">
+    <defs>
+      <clipPath id="squircle" clipPathUnits="objectBoundingBox">
+        <path d="M .5,0 C .1,0 0,.1 0,.5 0,.9 .1,1 .5,1 .9,1 1,.9 1,.5 1,.1 .9,0 .5,0 Z"/>
+      </clipPath>
+    </defs>
+  </svg>
+</ProjectDetailsLayout>
+
+<style>
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .container > * {
+    flex-grow: 1;
+  }
+
+  .container > aside {
+    width: 270px;
+    flex: 0 0 270px;
+    padding: 0 0 10px 50px;
+  }
+
+  .documents {
+    padding: 1px 50px 0 0;
+  }
+
+  .readme {
+    color: var(--gray-800); 
+    max-width: 85ch;
+    padding-bottom: 3em;
+    padding-left: 5px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+  }
+
+  aside > section {
+    position: relative;
+  }
+
+  aside section + section {
+    margin-top: 1.8em;
+  }
+
+  section h1 {
+    font-size: 1em;
+  }
+
+  section.add button.primary {
+    width: 100%;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 14px 28px;
+  }
+
+  section.about button.settings {
+    color: var(--gray-800);
+    position: absolute;
+    right: 2px;
+    top: 5px;
+  }
+
+  section.about button.settings:hover {
+    color: var(--link-blue);
+  }
+
+  section.about a {
+    color: var(--gray-500);
+    display: inline-block;
+    font-size: var(--font-small);
+    font-weight: 600;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  section.about svg {
+    padding-right: 3px;
+  }
+
+  section.export button {
+    margin-top: 2.5em;
+    width: 100%;
+  }
+</style>
+

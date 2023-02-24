@@ -1,0 +1,100 @@
+---
+import { Icon } from 'astro-iconify';
+---
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th class="right">Annotations</th>
+      <th>Last Edit</th>
+      <th class="right">
+        <Icon name="ph:dots-three-bold" />
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Book 1</td>
+      <td>Homer</td>
+      <td>700 BCE</td>
+      <td class="right">12</td>
+      <td>5 days ago</td>
+      <td class="right">
+        <Icon name="ph:caret-down-bold" />
+      </td>
+    </tr>
+    <tr>
+      <td>Book 2</td>
+      <td>Homer</td>
+      <td>700 BCE</td>
+      <td class="right">4</td>
+      <td>2 days ago</td>
+      <td class="right">
+        <Icon name="ph:caret-down-bold" />
+      </td>
+    </tr>
+    <tr>
+      <td>Book 3</td>
+      <td>Homer</td>
+      <td>700 BCE</td>
+      <td class="right">1.284</td>
+      <td>4 weeks ago</td>
+      <td class="right">
+        <Icon name="ph:caret-down-bold" />
+      </td>
+    </tr>
+    <tr>
+      <td>Book 4</td>
+      <td>Homer</td>
+      <td>700 BCE</td>
+      <td class="right">24</td>
+      <td>12 months ago</td>
+      <td class="right">
+        <Icon name="ph:caret-down-bold" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<style>
+  table {
+    border-collapse: collapse;
+    font-size: var(--font-small);
+    width: 100%;
+  }
+
+  th {
+    color: var(--gray-800);
+    font-weight: 600;
+    text-align: left;
+    padding: 4px 12px 8px 12px;
+  }
+
+  th, td {
+    border-bottom: 1px solid var(--gray-300);
+  }
+
+  td {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  td svg {
+    height: 10px;
+    padding-right: 3px;
+  }
+
+  tr:nth-child(odd) td {
+    background-color: var(--gray-50);
+  }
+
+  tr:hover td {
+    background-color: var(--gray-100);
+  }
+</style>

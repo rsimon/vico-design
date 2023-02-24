@@ -1,0 +1,158 @@
+---
+import { Icon } from 'astro-iconify';
+import { t } from 'i18next';
+import BaseLayout from '@layouts/dashboard/BaseLayout.astro';
+
+export interface Props {
+
+  active: string
+
+  project: {
+
+    title: string,
+
+    slug: string
+
+  }
+
+}
+
+const { active, project } = Astro.props;
+---
+<BaseLayout title={`My Projects | ${project.title}`} active="projects">	
+  <div class="container">
+    <div>
+      <header>
+        <a href="/projects" class="back">
+          <Icon name="ph:arrow-left-bold" /> {t('dashboard.projects.Back_to_My_Projects')}
+        </a>
+
+        <h1>{project.title}</h1>
+      </header>	
+
+      <nav aria-label="sub menu" aria-role="tablist">
+        <ol>
+          <li class:list={[{ active: active == 'content' }]}>
+            <a href={`/projects/${project.slug}`}>
+              <Icon name="ph:files" /> {t('dashboard.projects.Content')}
+            </a>
+          </li><!--
+
+          --><li class:list={[{ active: active == 'collaboration' }]}>
+            <a href={`/projects/${project.slug}/collaboration`}>
+              <Icon name="ph:users-three" /> {t('dashboard.projects.Collaboration')}
+            </a>
+          </li><!--
+
+          --><li class:list={[{ active: active == 'assignments' }]}>
+            <a href={`/projects/${project.slug}/assignments`}>
+              <Icon name="ph:graduation-cap" /> {t('dashboard.projects.Assignments')}
+            </a>
+          </li><!--
+          
+          --><li class:list={[{ active: active == 'addons' }]}>
+            <a href={`/projects/${project.slug}/addons`}>
+              <Icon name="ph:puzzle-piece" /> {t('dashboard.projects.Add_Ons')}
+            </a>
+          </li><!--
+
+          --><li class:list={[{ active: active == 'settings' }]}>
+            <a href={`/projects/${project.slug}/settings`}>
+              <Icon name="ph:sliders" /> {t('dashboard.projects.Settings')}
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <main>
+      <slot />
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 30px 40px 10px 40px;
+  }
+
+  header h1 {
+    padding: 0.6em 0;
+  }
+
+  header a.back {
+    color: var(--gray-500);
+    font-size: var(--font-small);
+    font-weight: 500;
+  }
+
+  header a.back svg {
+    height: 1.1em;
+    padding-right: 5px;
+    position: relative;
+    top: -1px;
+  }
+
+  nav ol {
+    list-style-type: none;
+    margin: 10px 0 0 0;
+    padding: 0 0 0 40px;
+  }
+
+  nav li {
+    display: inline-block;
+  }
+
+  nav a {
+    border-color: transparent transparent var(--gray-300) transparent;
+    border-style: solid;
+    border-width: 3px 1px 1px 1px;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    color: var(--gray-800);
+    display: inline-block;
+    font-size: var(--font-small);
+    line-height: 100%;
+    margin: 0;
+    padding: 9px 16px 10px 14px;
+    position: relative;
+    top: 1px;    
+  }
+
+  nav a:hover {
+    text-decoration: none;
+  }
+
+  nav li + li a {
+    margin-left: 4px;
+  }
+
+  nav svg {
+    color: var(--gray-500);
+    padding-right: 2px;
+    position: relative;
+    top: -0.5px;
+  }
+
+  nav li.active a {
+    background-color: #fff;
+    border-color: var(--cravensworth-500) var(--gray-300) #fff var(--gray-300);
+  }
+
+  nav li:not(.active):hover a {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  main {
+    flex-grow: 1;
+    background-color: #fff;
+    border-top: 1px solid var(--gray-300);
+    padding: 40px;
+  }
+</style>
+

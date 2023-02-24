@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Sidebar from '@components/dashboard/Sidebar.astro';
+
+export interface Props {
+
+	title: string;
+
+  active: string;
+  
+}
+
+const { title, active } = Astro.props;
+---
+<BaseLayout title={title}>	
+	<Sidebar active={active} />
+	
+	<div class="container">
+		<slot />
+	</div>
+</BaseLayout>
+
+<style>
+	body {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.container {
+    flex-grow: 1;
+  }
+</style>
+
