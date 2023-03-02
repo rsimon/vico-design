@@ -92,6 +92,8 @@ export const ImageToolbar = (props: ImageToolbarProps) => {
           </button>
         </section>
 
+        <div className="ia-toolbar-separator" />
+
         <section className="visibility">
           <button>
             <Lock />
