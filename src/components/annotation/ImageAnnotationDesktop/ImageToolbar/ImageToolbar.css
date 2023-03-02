@@ -1,5 +1,5 @@
 .ia-toolbar-wrapper {
-  bottom: 30px;
+  bottom: 10px;
   display: flex;
   justify-content: center;
   left: 0;
@@ -10,14 +10,82 @@
 
 .ia-toolbar {
   background-color: #fff;
-  border-radius: var(--border-radius);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 6px;
+  border: 1px solid var(--gray-300);
+  border-radius: 15px;
+  box-shadow: 0px 0px 16px -1px rgba(0, 0, 0, 0.05), 0px 0px 16px -8px rgba(0, 0, 0, 0.05), 0px 0px 16px -12px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.08);
   bottom: 30px;
-  padding: 5px;
   pointer-events: all;
   white-space: nowrap;
 }
 
 .ia-toolbar section {
   display: inline-block;
+  padding: 5px 3px;
+  white-space: nowrap;
 }
+
+.ia-toolbar section:first-child {
+  padding-left: 0;
+}
+
+.ia-toolbar section:last-child {
+  padding-right: 0;
+}
+
+.ia-toolbar section + section {
+  border-left: 0 solid var(--gray-300);
+}
+
+.ia-toolbar button {
+  align-items: center;
+  background: transparent;
+  border: none;
+  clip-path: url(#squircle);
+  border-radius: 9px;
+  color: var(--gray-600);
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  margin: 0 4px;
+  outline: none;
+  padding: 0; 
+  width: 40px;
+}
+
+:is(button, a.button) + :is(button, a.button) {
+  margin-left: 0;
+}
+
+.ia-toolbar button:hover {
+  background-color: #e9e9e9;
+  color: var(--gray-800);
+}
+
+.ia-toolbar button.active {
+  background-color: #7032d8;
+  color: #fff;
+}
+
+.ia-toolbar button svg {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 19px;
+}
+
+.ia-toolbar section.visibility {
+  /* background-color: #7032d8; */
+  border-radius: 0 var(--border-radiu   s) var(--border-radius) 0;
+}
+
+.ia-toolbar section.visibility button {
+  color: #fff;
+  font-size: 12px;
+  width: auto;
+  padding: 10px;
+}
+
+.ia-toolbar section.visibility button svg {
+  padding-right: 5px;
+}
+

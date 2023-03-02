@@ -1,4 +1,13 @@
-import { ArrowUUpLeft, ArrowUUpRight, BoundingBox, Circle, CrosshairSimple, Polygon } from 'phosphor-react';
+import { 
+  ArrowClockwise, 
+  ArrowCounterClockwise,  
+  Circle, 
+  CrosshairSimple, 
+  DotsThreeVertical,
+  Lock,
+  Rectangle,
+  Triangle
+} from 'phosphor-react';
 
 import './ImageToolbar.css';
 
@@ -14,15 +23,44 @@ export const ImageToolbar = (props: ImageToolbarProps) => {
     <div className="ia-toolbar-wrapper">
       <div className="ia-toolbar">
         <section>
-          <ArrowUUpLeft />
-          <ArrowUUpRight />
+          <button>
+            <ArrowCounterClockwise weight="bold" />
+          </button>
+
+          <button>
+            <ArrowClockwise weight="bold" />
+          </button>
         </section>
 
         <section>
-          <CrosshairSimple />
-          <BoundingBox />
-          <Polygon />
-          <Circle />
+          <button>
+            <CrosshairSimple weight="bold" />
+          </button>
+
+          <button className="active">
+            <Rectangle weight="bold" />
+          </button>
+
+          <button>
+            <Triangle weight="bold" />
+          </button>
+
+          <button>
+            <Circle weight="bold" />
+          </button>
+        </section>
+
+        <section>
+          <button>
+            <DotsThreeVertical weight="bold" />
+          </button>
+        </section>
+
+        <section className="visibility">
+          <button>
+            <Lock />
+            <span>Private</span>
+          </button>
         </section>
       </div>
     </div>

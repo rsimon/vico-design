@@ -61,6 +61,9 @@ export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
       </div>
 
       <AvatarOverlay />
+
+      
+
       <ImageToolbar />
     </div>
   )
