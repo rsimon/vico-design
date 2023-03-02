@@ -3,3 +3,7 @@
   position: relative;
   width: 100%;
 }
+
+.ia-osd-container .openseadragon-canvas {
+  outline: none;
+}

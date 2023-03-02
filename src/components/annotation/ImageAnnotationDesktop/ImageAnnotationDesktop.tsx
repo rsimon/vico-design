@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import OpenSeadragon from 'openseadragon';
+import { AvatarOverlay } from './AvatarOverlay/AvatarOverlay';
 
 import './ImageAnnotationDesktop.css';
 
@@ -46,7 +47,8 @@ export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
         tileSources: DUMMY_IMAGE,
         gestureSettingsMouse: {
           clickToZoom: false
-        }
+        }, 
+        showNavigationControl: false
       }); 
     }
   }, [ osd.current ])
@@ -56,6 +58,8 @@ export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
       <div ref={osd} className="ia-osd-container">
         {/* OSD mounts here */}
       </div>
+
+      <AvatarOverlay />
     </div>
   )
 

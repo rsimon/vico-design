@@ -4,6 +4,7 @@ import { t } from 'i18next';
 import { AvatarList, LayoutToggle } from '@components/common';
 import DocumentTable from '@components/dashboard/DocumentTable.astro';
 import { ActivityChart } from '@components/dashboard/projects/ActivityChart';
+import SquircleClipPath from '@components/common/Avatar/SquircleClipPath.astro';
 import ProjectDetailsLayout from '@layouts/dashboard/ProjectDetailsLayout.astro';
 import { Content as Readme } from './readme.md';
 
@@ -130,14 +131,8 @@ const activity = [
       </section>
     </aside>
   </div>
-  
-  <svg class="defs">
-    <defs>
-      <clipPath id="squircle" clipPathUnits="objectBoundingBox">
-        <path d="M .5,0 C .1,0 0,.1 0,.5 0,.9 .1,1 .5,1 .9,1 1,.9 1,.5 1,.1 .9,0 .5,0 Z"/>
-      </clipPath>
-    </defs>
-  </svg>
+
+  <SquircleClipPath />
 </ProjectDetailsLayout>
 
 <style>

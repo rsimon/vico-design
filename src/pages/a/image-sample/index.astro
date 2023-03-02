@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { ImageAnnotationDesktop } from '@components/annotation/ImageAnnotationDesktop';
+import SquircleClipPath from '@components/common/Avatar/SquircleClipPath.astro';
 ---
 
 <BaseLayout title="Image Annotation">
   <ImageAnnotationDesktop client:only />
+  <SquircleClipPath />
 </BaseLayout>

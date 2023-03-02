@@ -4,6 +4,7 @@
   clip-path: url(#squircle);
   display: inline-block;
   height: 42.5px;
+  margin-bottom: -8px;
   position:relative;
   width: 42.5px;
 }
@@ -33,16 +34,18 @@
 
 .avatar-list {
   margin-left: -2px;
+  padding: 0;
 }
 
 .avatar-list ul {
+  display: inline-block;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
 .avatar-list li {
-  display: inline-block;
+  display: inline;
 }
 
 .avatar-list li + li {
