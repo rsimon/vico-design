@@ -9,11 +9,14 @@
 }
 
 .ia-toolbar {
+  align-items: center;
   background-color: #fff;
   border: 1px solid var(--gray-300);
   border-radius: 15px;
   box-shadow: 0px 0px 16px -1px rgba(0, 0, 0, 0.05), 0px 0px 16px -8px rgba(0, 0, 0, 0.05), 0px 0px 16px -12px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.08);
   bottom: 30px;
+  display: flex;
+  flex-direction: row;
   pointer-events: all;
   white-space: nowrap;
 }
@@ -50,6 +53,7 @@
   outline: none;
   padding: 0; 
   width: 40px;
+  transition: all 0.125s;
 }
 
 :is(button, a.button) + :is(button, a.button) {
@@ -87,5 +91,13 @@
 
 .ia-toolbar section.visibility button svg {
   padding-right: 5px;
+}
+
+.ia-toolbar-separator {
+  border-left: 1.5px solid #e2e2e2;
+  display: inline-block;
+  height: 16px;
+  margin: 0;
+  width: 0;
 }
 

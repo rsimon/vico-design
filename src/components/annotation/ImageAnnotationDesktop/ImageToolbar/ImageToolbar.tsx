@@ -1,8 +1,10 @@
+import { ReactElement, useState } from 'react';
 import { 
   ArrowClockwise, 
   ArrowCounterClockwise,  
   Circle, 
   CrosshairSimple, 
+  Cursor,
   DotsThreeVertical,
   Lock,
   Rectangle,
@@ -11,6 +13,30 @@ import {
 
 import './ImageToolbar.css';
 
+interface ToolButtonProps {
+
+  name: string;
+
+  active: string;
+
+  setActive(s: string): void;
+
+  children: ReactElement;
+
+}
+
+const ToolButton = (props: ToolButtonProps) => {
+
+  return (
+    <button 
+      className={props.active === props.name ? 'active' : undefined}
+      onClick={() => props.setActive(props.name)}>
+      {props.children}
+    </button>
+  )
+
+}
+
 interface ImageToolbarProps {
 
   // for future use
@@ -18,6 +44,8 @@ interface ImageToolbarProps {
 }
 
 export const ImageToolbar = (props: ImageToolbarProps) => {
+
+  const [ active, setActive ] = useState('cursor');
 
   return (
     <div className="ia-toolbar-wrapper">
@@ -32,23 +60,31 @@ export const ImageToolbar = (props: ImageToolbarProps) => {
           </button>
         </section>
 
+        <div className="ia-toolbar-separator" />
+
         <section>
-          <button>
+          <ToolButton active={active} setActive={setActive} name="cursor">
+            <Cursor weight="bold" />
+          </ToolButton>
+
+          <ToolButton active={active} setActive={setActive} name="point">
             <CrosshairSimple weight="bold" />
-          </button>
+          </ToolButton>
 
-          <button className="active">
+          <ToolButton active={active} setActive={setActive} name="rectangle">
             <Rectangle weight="bold" />
-          </button>
+          </ToolButton>
 
-          <button>
+          <ToolButton active={active} setActive={setActive} name="triangle">
             <Triangle weight="bold" />
-          </button>
+          </ToolButton>
 
-          <button>
+          <ToolButton active={active} setActive={setActive} name="circle">
             <Circle weight="bold" />
-          </button>
+          </ToolButton>
         </section>
+
+        <div className="ia-toolbar-separator" />
 
         <section>
           <button>
