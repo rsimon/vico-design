@@ -7,3 +7,9 @@
 .ia-osd-container .openseadragon-canvas {
   outline: none;
 }
+
+.ia-overlay {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 6px;
+  position: absolute;
+}

@@ -1,0 +1,23 @@
+.ia-toolbar-wrapper {
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+
+.ia-toolbar {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 6px;
+  bottom: 30px;
+  padding: 5px;
+  pointer-events: all;
+  white-space: nowrap;
+}
+
+.ia-toolbar section {
+  display: inline-block;
+}
