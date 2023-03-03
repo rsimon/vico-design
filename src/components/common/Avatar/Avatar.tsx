@@ -5,6 +5,8 @@ interface AvatarProps {
 
   user: User;
 
+  color?: string;
+
 }
 
 const getInitials = (user: User): string => {
@@ -31,10 +33,10 @@ const stringToHslColor = (str: string) => {
 
 export const Avatar = (props: AvatarProps) => {
 
-  const { user  } = props;
+  const { user, color  } = props;
 
   return (
-    <RadixAvatar.Root className="avatar">
+    <RadixAvatar.Root className="avatar" style={color ? { backgroundColor: color }: undefined}>
       {user.avatarUrl &&
         <RadixAvatar.Image
           className="avatar-image"

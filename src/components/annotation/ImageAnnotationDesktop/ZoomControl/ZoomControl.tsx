@@ -13,11 +13,11 @@ export const ZoomControl = (props: ZoomControlProps) => {
   return (
     <div className="ia-zoom ia-overlay">
       <button onClick={() => props.onZoom(1.2)}>
-        <Plus />
+        <Plus weight="bold" />
       </button>
 
       <button onClick={() => props.onZoom(0.8)}>
-        <Minus />
+        <Minus weight="bold" />
       </button>
     </div>
   )

@@ -1,10 +1,14 @@
 .ia-zoom {
   position: absolute;
   right: 10px;
-  top: 60px;
+  top: 65px;
   padding: 3px;
 }
 
 .ia-overlay.ia-zoom button {
   display: flex;
+}
+
+.ia-overlay.ia-zoom button svg {
+  height: 17.5px;
 }

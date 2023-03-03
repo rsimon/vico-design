@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import OpenSeadragon from 'openseadragon';
-import { AvatarOverlay } from './AvatarOverlay/AvatarOverlay';
-import { ImageToolbar } from './ImageToolbar/ImageToolbar';
-import { ZoomControl } from './ZoomControl/ZoomControl';
+import { PresenceOverlay } from './PresenceOverlay';
+import { ImageToolbar } from './ImageToolbar';
+import { ZoomControl } from './ZoomControl';
 import { RightSidebarTrigger } from './RightSidebar/RightSidebarTrigger';
 
 import './ImageAnnotationDesktop.css';
@@ -69,7 +69,7 @@ export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
         {/* OSD mounts here */}
       </div>
 
-      <AvatarOverlay />
+      <PresenceOverlay />
 
       <RightSidebarTrigger />
 
