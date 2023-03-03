@@ -25,7 +25,7 @@
 }
 
 .ia-presence .avatar-wrapper {
-  background-color: var(--gray-50);
+  background-color: #fff;
   clip-path: url(#squircle);
   height: 36px;
   width: 36px;
