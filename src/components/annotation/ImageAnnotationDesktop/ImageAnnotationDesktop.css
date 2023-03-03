@@ -9,7 +9,20 @@
 }
 
 .ia-overlay {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 0px 16px -1px rgba(0, 0, 0, 0.05), 0px 0px 16px -8px rgba(0, 0, 0, 0.05), 0px 0px 16px -12px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.08);
-  position: absolute;
+}
+
+.ia-overlay button {
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: var(--gray-600);
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  outline: none;
+  padding: 0;
+  width: 40px;
+  transition: all 0.125s;
 }

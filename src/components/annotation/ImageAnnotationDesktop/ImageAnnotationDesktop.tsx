@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import OpenSeadragon from 'openseadragon';
 import { AvatarOverlay } from './AvatarOverlay/AvatarOverlay';
 import { ImageToolbar } from './ImageToolbar/ImageToolbar';
+import { ZoomControl } from './ZoomControl/ZoomControl';
 
 import './ImageAnnotationDesktop.css';
 
@@ -62,7 +63,7 @@ export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
 
       <AvatarOverlay />
 
-      
+      <ZoomControl />
 
       <ImageToolbar />
     </div>

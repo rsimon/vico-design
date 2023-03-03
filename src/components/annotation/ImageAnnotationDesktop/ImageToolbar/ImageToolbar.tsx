@@ -49,7 +49,7 @@ export const ImageToolbar = (props: ImageToolbarProps) => {
 
   return (
     <div className="ia-toolbar-wrapper">
-      <div className="ia-toolbar">
+      <div className="ia-toolbar ia-overlay">
         <section>
           <button>
             <ArrowCounterClockwise weight="bold" />
