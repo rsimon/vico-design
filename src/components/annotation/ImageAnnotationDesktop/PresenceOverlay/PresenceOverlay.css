@@ -3,13 +3,14 @@
   padding: 3px 3px 3px 5px;
   position: absolute;
   right: 65px;
-  top: 10px;
+  top: 8px;
 }
 
 .ia-presence ul {
   filter: 
-    drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25)) 
-    drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.08));
+    drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.35)) 
+    drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.12)) 
+    drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.08));
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -23,28 +24,26 @@
   margin-left: -8px;
 }
 
-.ia-presence .avatar-outline {
-  backdrop-filter: blur(4px);
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  background-color: #fff;
+.ia-presence .avatar-wrapper {
+  background-color: var(--gray-50);
   clip-path: url(#squircle);
-  display: inline-block;
-  height: 38px;
-  width: 38px;
-  position: relative;
+  height: 36px;
+  width: 36px;
 }
 
 .ia-presence .avatar {
-  height: 35px;
-  width: 35px;
+  height: 33px;
+  left: 1.5px;
   position: relative;
   top: 1.5px;
-  left: 1.5px;
+  width: 33px;
 }
 
 .ia-presence .avatar-fallback, .ia-presence .avatar-image {
-  top: 2.5px;
-  left: 2.5px;
-  height: 30px;
-  width: 30px;
+  font-size: 12px;
+  font-weight: 500;
+  height: 29px;
+  left: 2px;
+  top: 2px;
+  width: 29px;
 }
