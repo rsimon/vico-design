@@ -10,6 +10,7 @@
 
 .ia-overlay {
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--gray-300);
   border-radius: 15px;

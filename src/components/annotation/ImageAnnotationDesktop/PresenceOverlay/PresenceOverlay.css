@@ -32,18 +32,18 @@
 }
 
 .ia-presence .avatar {
-  height: 33px;
-  left: 1.5px;
+  height: 32px;
+  left: 2px;
   position: relative;
-  top: 1.5px;
-  width: 33px;
+  top: 2px;
+  width: 32px;
 }
 
 .ia-presence .avatar-fallback, .ia-presence .avatar-image {
   font-size: 12px;
   font-weight: 500;
-  height: 29px;
+  height: 28px;
   left: 2px;
   top: 2px;
-  width: 29px;
+  width: 28px;
 }
