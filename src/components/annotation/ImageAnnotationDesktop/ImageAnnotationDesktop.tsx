@@ -3,6 +3,7 @@ import OpenSeadragon from 'openseadragon';
 import { AvatarOverlay } from './AvatarOverlay/AvatarOverlay';
 import { ImageToolbar } from './ImageToolbar/ImageToolbar';
 import { ZoomControl } from './ZoomControl/ZoomControl';
+import { RightSidebarTrigger } from './RightSidebar/RightSidebarTrigger';
 
 import './ImageAnnotationDesktop.css';
 
@@ -69,6 +70,8 @@ export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
       </div>
 
       <AvatarOverlay />
+
+      <RightSidebarTrigger />
 
       <ZoomControl onZoom={onZoom} />
 
