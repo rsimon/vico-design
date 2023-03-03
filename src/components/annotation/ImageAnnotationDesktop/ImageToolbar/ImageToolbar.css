@@ -10,14 +10,10 @@
 
 .ia-toolbar {
   align-items: center;
-  border: 1px solid var(--gray-300);
-  border-radius: 15px;
   bottom: 30px;
   display: flex;
   flex-direction: row;
   pointer-events: all;
-  white-space: nowrap;
-  backdrop-filter: blur(4px);
 }
 
 .ia-toolbar section {
@@ -39,46 +35,7 @@
 }
 
 .ia-toolbar button {
-  align-items: center;
-  background: transparent;
-  border: none;
-  clip-path: url(#squircle);
-  border-radius: 9px;
-  color: var(--gray-600);
-  display: inline-flex;
-  height: 40px;
-  justify-content: center;
   margin: 0 4px;
-  outline: none;
-  padding: 0; 
-  width: 40px;
-  transition: all 0.125s;
-}
-
-:is(button, a.button) + :is(button, a.button) {
-  margin-left: 0;
-}
-
-.ia-toolbar button:hover {
-  background-color: rgba(0, 0, 0, 0.09);
-  color: var(--gray-800);
-}
-
-.ia-toolbar button.active {
-  background-color: #7032d8;
-  color: #fff;
-}
-
-.ia-toolbar button svg {
-  margin: 0;
-  padding: 0;
-  width: auto;
-  height: 19px;
-}
-
-.ia-toolbar section.visibility {
-  /* background-color: #7032d8; */
-  border-radius: 0 var(--border-radiu   s) var(--border-radius) 0;
 }
 
 .ia-toolbar section.visibility button {
@@ -90,13 +47,5 @@
 
 .ia-toolbar section.visibility button svg {
   padding-right: 5px;
-}
-
-.ia-toolbar-separator {
-  border-left: 1.5px solid #e2e2e2;
-  display: inline-block;
-  height: 16px;
-  margin: 0;
-  width: 0;
 }
 

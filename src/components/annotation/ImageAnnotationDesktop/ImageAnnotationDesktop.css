@@ -9,14 +9,23 @@
 }
 
 .ia-overlay {
+  backdrop-filter: blur(4px);
   background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 0px 16px -1px rgba(0, 0, 0, 0.05), 0px 0px 16px -8px rgba(0, 0, 0, 0.05), 0px 0px 16px -12px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--gray-300);
+  border-radius: 15px;
+  box-shadow:
+    0px 0px 16px -1px rgba(0, 0, 0, 0.05),
+    0px 0px 16px -8px rgba(0, 0, 0, 0.05), 
+    0px 0px 16px -12px rgba(0, 0, 0, 0.12),
+    0px 0px 2px 0px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
 }
 
 .ia-overlay button {
   align-items: center;
   background: transparent;
   border: none;
+  clip-path: url(#squircle);
   color: var(--gray-600);
   display: inline-flex;
   height: 40px;
@@ -25,4 +34,43 @@
   padding: 0;
   width: 40px;
   transition: all 0.125s;
+}
+
+.ia-overlay button svg {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 19px;
+}
+
+.ia-overlay :is(button, a.button) + :is(button, a.button) {
+  margin-left: 0;
+}
+
+.ia-overlay button:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+  color: var(--gray-800);
+}
+
+.ia-overlay button.active {
+  background-color: #7032d8;
+  color: #fff;
+}
+
+.ia-overlay-divider {
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.ia-overlay-divider-h {
+  border-top-width: 2px; 
+  width: 16px;
+}
+
+.ia-overlay-divider-v {
+  border-left-width: 2px; 
+  height: 16px;
 }

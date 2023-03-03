@@ -60,7 +60,7 @@ export const ImageToolbar = (props: ImageToolbarProps) => {
           </button>
         </section>
 
-        <div className="ia-toolbar-separator" />
+        <div className="ia-overlay-divider ia-overlay-divider-v" />
 
         <section>
           <ToolButton active={active} setActive={setActive} name="cursor">
@@ -84,7 +84,7 @@ export const ImageToolbar = (props: ImageToolbarProps) => {
           </ToolButton>
         </section>
 
-        <div className="ia-toolbar-separator" />
+        <div className="ia-overlay-divider ia-overlay-divider-v" />
 
         <section>
           <button>
@@ -92,7 +92,7 @@ export const ImageToolbar = (props: ImageToolbarProps) => {
           </button>
         </section>
 
-        <div className="ia-toolbar-separator" />
+        <div className="ia-overlay-divider ia-overlay-divider-v" />
 
         <section className="visibility">
           <button>

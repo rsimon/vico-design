@@ -4,19 +4,19 @@ import './ZoomControl.css';
 
 interface ZoomControlProps {
 
+  onZoom(inc: number): void
+
 }
 
 export const ZoomControl = (props: ZoomControlProps) => {
 
   return (
     <div className="ia-zoom ia-overlay">
-      <button>
+      <button onClick={() => props.onZoom(1.2)}>
         <Plus />
       </button>
 
-      <div className="ia-overlay-divider ia-overlay-divider-h" />
-
-      <button>
+      <button onClick={() => props.onZoom(0.8)}>
         <Minus />
       </button>
     </div>

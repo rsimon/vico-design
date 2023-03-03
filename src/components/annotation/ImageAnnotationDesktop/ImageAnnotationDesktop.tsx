@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import OpenSeadragon from 'openseadragon';
 import { AvatarOverlay } from './AvatarOverlay/AvatarOverlay';
 import { ImageToolbar } from './ImageToolbar/ImageToolbar';
@@ -41,9 +41,11 @@ export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
 
   const osd = useRef<HTMLDivElement>(null);
 
+  const [ viewer, setViewer ] = useState<OpenSeadragon.Viewer | undefined>(undefined);
+
   useEffect(() => {
     if (osd.current) {
-      const viewer = OpenSeadragon({
+      setViewer(OpenSeadragon({
         element: osd.current,
         prefixUrl: 'https://cdn.jsdelivr.net/npm/openseadragon@3.1/build/openseadragon/images/',
         tileSources: DUMMY_IMAGE,
@@ -51,9 +53,14 @@ export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
           clickToZoom: false
         }, 
         showNavigationControl: false
-      }); 
+      })); 
     }
-  }, [ osd.current ])
+  }, [])
+
+  const onZoom = (factor: number) => {
+    viewer?.viewport.zoomBy(factor);
+    viewer?.viewport.applyConstraints();
+  }
 
   return (
     <div className="ia-desktop-container">
@@ -63,7 +70,7 @@ export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
 
       <AvatarOverlay />
 
-      <ZoomControl />
+      <ZoomControl onZoom={onZoom} />
 
       <ImageToolbar />
     </div>

@@ -18,7 +18,7 @@ export const AvatarList = (props: AvatarListProps) => {
   const remainder = props.users.length - len;
 
   return (
-    <p className="avatar-list">
+    <div className="avatar-list">
       <ul>
         {head.map(user => 
           <li key={user.id}>
@@ -27,7 +27,7 @@ export const AvatarList = (props: AvatarListProps) => {
         )}
       </ul>
       {remainder > 0 && <span>+{remainder}</span>}
-    </p>
+    </div>
   )
 
 }
