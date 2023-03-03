@@ -2,11 +2,12 @@ import { ReactElement, useState } from 'react';
 import { 
   ArrowClockwise, 
   ArrowCounterClockwise,  
+  CaretDown,
   Circle, 
   CrosshairSimple, 
   Cursor,
+  Detective,
   DotsThreeVertical,
-  Lock,
   Rectangle,
   Triangle
 } from 'phosphor-react';
@@ -94,9 +95,9 @@ export const ImageToolbar = (props: ImageToolbarProps) => {
 
         <div className="ia-overlay-divider ia-overlay-divider-v" />
 
-        <section className="visibility">
-          <button>
-            <Lock />
+        <section>
+          <button className="visibility active">
+            <Detective />
             <span>Private</span>
           </button>
         </section>

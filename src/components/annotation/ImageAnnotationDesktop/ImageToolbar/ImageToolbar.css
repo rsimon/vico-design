@@ -38,14 +38,19 @@
   margin: 0 4px;
 }
 
-.ia-toolbar section.visibility button {
+.ia-toolbar button.visibility {
+  background-color: #7032d8;
+  border-radius: 8px;
+  clip-path: none;
   color: #fff;
-  font-size: 12px;
+  font-weight: 500;
+  height: 38px;
+  margin: 0 5px;
+  padding: 0 20px;
   width: auto;
-  padding: 10px;
 }
 
-.ia-toolbar section.visibility button svg {
-  padding-right: 5px;
+.ia-toolbar button.visibility svg {
+  padding-right: 8px;
 }
 
