@@ -53,11 +53,15 @@ button:hover, a.button:hover {
 }
 
 button.primary, a.button.primary {
+  background: linear-gradient(var(--cravensworth-700), var(--cravensworth-800));
+  background-color: var(--cravensworth-700);
+  border: 1px solid var(--cravensworth-800);
+  box-shadow: 
+    inset 0 1px 2px -1px rgb(255, 255, 255, 0.55), 
+    0 1px 4px -1px rgb(0, 0, 0, 0.5), 
+    0 2px 8px rgb(0, 0, 0, 0.12);
   color: rgba(255, 255, 255, 0.95);
   font-weight: 500;
-  background: linear-gradient(#522b94, #402076);
-  border: 1px solid #180c2d;
-  box-shadow: inset 0 1px 2px -1px rgb(255 255 255 / 35%), 0 1px 4px -1px rgb(0 0 0 / 60%), 0 2px 8px rgb(0 0 0 / 12%);
 }
 
 button.primary:hover,  a.button.primary:hover {

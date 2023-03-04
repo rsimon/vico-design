@@ -9,11 +9,11 @@
 :root{
   /* Colors */
 
-  --cravensworth: #49297f;
-
   --cravensworth-900: #130a36; /* dashboard sidebar background */
-  --cravensworth-800: #2d1e66; /* primary button border */
+  /* --cravensworth-800: #2d1e66; /* primary button border */
   
+
+  --cravensworth-800: #402076;
   --cravensworth-700: #522b94; /* primary button background */
 
   --cravensworth-500: #594e85; /* primary button hover background */
