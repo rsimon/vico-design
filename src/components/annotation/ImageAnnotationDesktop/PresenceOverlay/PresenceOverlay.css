@@ -40,10 +40,17 @@
 }
 
 .ia-presence .avatar-fallback, .ia-presence .avatar-image {
-  font-size: 12px;
-  font-weight: 500;
   height: 28px;
   left: 2px;
   top: 2px;
+  width: 28px;
+}
+
+.ia-presence .avatar-fallback-inner {
+  font-size: 12px;
+  font-weight: 500;
+  height: 28px;
+  left: 0;
+  top: 0;
   width: 28px;
 }

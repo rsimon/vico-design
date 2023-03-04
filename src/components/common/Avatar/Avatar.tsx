@@ -22,18 +22,21 @@ const getInitials = (user: User): string => {
   }
 }
 
-const stringToHslColor = (str: string) => {
+const stringToHue = (str: string) => {
   let hash = 0;
   
   for (let i=0; i<str.length; i++)
     hash = str.charCodeAt(i) + ((hash << 5) - hash);
 
-  return `hsl(${hash % 360}, 35%, 65%)`; 
+  // return `radial-gradient(hsl(${hash % 360}, 35%, 65%), hsl(${hash % 360}, 35%, 45%))`; 
+  return hash % 360; 
 }
 
 export const Avatar = (props: AvatarProps) => {
 
   const { user, color  } = props;
+
+  const hue = stringToHue(user.id);
 
   return (
     <RadixAvatar.Root className="avatar" style={color ? { backgroundColor: color }: undefined}>
@@ -46,8 +49,12 @@ export const Avatar = (props: AvatarProps) => {
 
       <RadixAvatar.Fallback 
         className="avatar-fallback"
-        style={{ backgroundColor: stringToHslColor(user.id) }}>
-        {getInitials(user)}
+        style={{ backgroundColor: `hsl(${hue}, 35%, 60%)` }}>
+        <div 
+          className="avatar-fallback-inner"
+          style={{ background: `radial-gradient(hsl(${hue}, 35%, 75%), hsl(${hue}, 35%, 68%))` }}>
+          {getInitials(user)}
+        </div>
       </RadixAvatar.Fallback>
     </RadixAvatar.Root>
   )

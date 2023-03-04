@@ -23,11 +23,18 @@
   object-fit: cover;
 }
 
-.avatar-fallback {
+.avatar-fallback-inner {
+  background: radial-gradient(hsl(188, 35%, 65%), hsl(188, 35%, 45%));
+  width: 36px;
+  height: 36px;
+  top: 1px;
+  left: 1px;
+  position: absolute;
+  clip-path: url(#squircle);
   align-items: center;
   color: #fff;
   display: flex;
-  font-weight: 700;
+  font-weight: 600;
   font-size: var(--font-small);
   justify-content: center;
 }
