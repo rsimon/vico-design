@@ -49,10 +49,10 @@ export const Avatar = (props: AvatarProps) => {
 
       <RadixAvatar.Fallback 
         className="avatar-fallback"
-        style={{ backgroundColor: `hsl(${hue}, 35%, 56%)` }}>
+        style={{ backgroundColor: `hsl(${hue}, 35%, 54%)` }}>
         <div 
           className="avatar-fallback-inner"
-          style={{ background: `radial-gradient(hsl(${hue}, 35%, 78%), hsl(${hue}, 35%, 62%))` }}>
+          style={{ background: `radial-gradient(hsl(${hue}, 35%, 78%), hsl(${hue}, 35%, 67%))` }}>
           {getInitials(user)}
         </div>
       </RadixAvatar.Fallback>

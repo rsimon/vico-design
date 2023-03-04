@@ -122,6 +122,7 @@ const { active, project } = Astro.props;
     padding: 9px 16px 10px 14px;
     position: relative;
     top: 1px;    
+    z-index: 0;
   }
 
   nav a:hover {
@@ -142,6 +143,7 @@ const { active, project } = Astro.props;
   nav li.active a {
     background-color: #fff;
     border-color: var(--cravensworth-500) var(--gray-300) #fff var(--gray-300);
+    z-index: 2;
   }
 
   nav li:not(.active):hover a {
@@ -152,7 +154,11 @@ const { active, project } = Astro.props;
     flex-grow: 1;
     background-color: #fff;
     border-top: 1px solid var(--gray-300);
+    box-shadow: 
+      0 0 4px -1px rgb(0, 0, 0, 0.08), 
+      0 0 16px rgb(0, 0, 0, 0.06);
     padding: 40px;
+    z-index: 1;
   }
 </style>
 
