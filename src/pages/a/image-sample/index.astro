@@ -5,6 +5,18 @@ import SquircleClipPath from '@components/common/Avatar/SquircleClipPath.astro';
 ---
 
 <BaseLayout title="Image Annotation">
-  <ImageAnnotationDesktop client:only />
+  <div class="container">
+    <ImageAnnotationDesktop client:only />
+  </div>
   <SquircleClipPath />
 </BaseLayout>
+
+<style>
+  .container {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+</style>
