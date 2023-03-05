@@ -57,8 +57,8 @@ export const ActivityChart = (props: ActivityChartProps) => {
 
       <Bar 
         dataKey="value" 
-        // --cravensworth-500
-        fill="#594e85"/>
+        // --cravensworth-700
+        fill="#522b94"/>
     </BarChart>
   )
 

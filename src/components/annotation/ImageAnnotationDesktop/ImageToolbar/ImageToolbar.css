@@ -39,7 +39,6 @@
 }
 
 .ia-toolbar button.visibility {
-  background: linear-gradient(var(--cravensworth-700), var(--cravensworth-800));
   background-color: var(--cravensworth-700);
   border-radius: 8px;
   clip-path: none;
@@ -54,4 +53,9 @@
 .ia-toolbar button.visibility svg {
   padding-right: 8px;
 }
+
+.ia-toolbar button.visibility:hover {
+  background-color: var(--cravensworth-500);
+}
+
 

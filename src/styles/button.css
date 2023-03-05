@@ -3,6 +3,7 @@ button, a.button {
   background-color: #fff;
   border: 1px solid var(--gray-400);
   border-radius: var(--border-radius);
+  box-shadow: 0 1px 2px -1px rgb(0, 0, 0, 0.18);
   color: var(--gray-600);
   cursor: pointer;
   display: flex;
@@ -11,6 +12,13 @@ button, a.button {
   font-size: var(--font-small);
   padding: 10px 20px;
   white-space: nowrap;
+}
+
+button.secondary, a.button.secondary {
+  background-color: #f9f6ff;
+  border: 1px solid #9776d0;
+  box-shadow: 0 1px 2px -1px rgb(0, 0, 0, 0.12), 0 1px 6px rgb(0, 0, 0, 0.05);
+  color: #7f5eb8;
 }
 
 button:focus-visible, a.button:focus-visible {
@@ -65,8 +73,8 @@ button.primary, a.button.primary {
 }
 
 button.primary:hover,  a.button.primary:hover {
-  /* background-color: var(--cravensworth-500); */
-  background: linear-gradient(#6b3fb7, #4e2d85);
+  background-color: var(--cravensworth-500);
+  background: linear-gradient(var(--cravensworth-500), var(--cravensworth-600));
 }
 
 button.small, a.button.small {

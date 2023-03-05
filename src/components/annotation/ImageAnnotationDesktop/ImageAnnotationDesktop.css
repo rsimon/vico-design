@@ -27,6 +27,7 @@
   background: transparent;
   border: none;
   border-radius: 12px;
+  box-shadow: none;
   clip-path: url(#squircle);
   color: var(--gray-600);
   display: inline-flex;
@@ -59,10 +60,14 @@
 }
 
 .ia-overlay button.active {
-  background: linear-gradient(var(--cravensworth-700), var(--cravensworth-800));
   background-color: var(--cravensworth-700);
   color: var(--white-t-90);
 }
+
+.ia-toolbar button.active:hover {
+  background-color: var(--cravensworth-500);
+}
+
 
 .ia-overlay-divider {
   border-style: solid;

@@ -13,10 +13,12 @@
   /* --cravensworth-800: #2d1e66; /* primary button border */
   
 
-  --cravensworth-800: #402076;
-  --cravensworth-700: #522b94; /* primary button background */
+  --cravensworth-800: #402076; /* primary button background (lower edge) */
+  --cravensworth-700: #522b94; /* primary button background (upper edge) */
+  --cravensworth-600: #593498; /* primary button hover background (lower edge) */
+  --cravensworth-500: #6b3fb7; /* primary button hover background (upper edge) */
 
-  --cravensworth-500: #594e85; /* primary button hover background */
+  /* --cravensworth-500: #594e85; /* primary button hover background */
   --cravensworth-300: #b5a2f7; /* dashboard sidebar tab indicator */
   --cravensworth-200: #e4e2ed; /* active menu option background */
 
@@ -28,6 +30,7 @@
   --gray-500: #797979; /* light font */
   --gray-400: #cacaca; /* button border */ 
   --gray-300: #d9d9d9; /* light section border */
+  --gray-200: #e8e8e8; /* light section border */
   --gray-100: #f6f6f6; /* bright page background */
   --gray-50:  #fafafa; /* table row background */
 
