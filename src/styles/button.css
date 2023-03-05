@@ -51,8 +51,10 @@ button svg:last-child, a.button svg:last-child  {
 }
 
 button svg:only-child, a.button svg:only-child {
+  margin-left: 0;
   margin-right: 0;
   padding-left: 0;
+  padding-right: 0;
 }
 
 button:hover, a.button:hover {
@@ -96,6 +98,7 @@ button.unstyled {
   background-color: transparent;
   border: none;
   border-radius: 0;
+  box-shadow: none;
   color: inherit;
   cursor: pointer;
   display: inline;
