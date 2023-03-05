@@ -9,28 +9,20 @@
 :root{
   /* Colors */
 
-  --cravensworth-900: #130a36; /* dashboard sidebar background */
-  /* --cravensworth-800: #2d1e66; /* primary button border */
-  
-
-  --cravensworth-800: #402076; /* primary button background (lower edge) */
-  --cravensworth-700: #522b94; /* primary button background (upper edge) */
-  --cravensworth-600: #593498; /* primary button hover background (lower edge) */
-  --cravensworth-500: #6b3fb7; /* primary button hover background (upper edge) */
-
-  /* --cravensworth-500: #594e85; /* primary button hover background */
-  --cravensworth-300: #b5a2f7; /* dashboard sidebar tab indicator */
-  --cravensworth-200: #e4e2ed; /* active menu option background */
-
-  /** --link-blue: #3366cc; **/
-  --link-blue: #895ebc;
+  --cravensworth-900: #25163f; /* dashboard sidebar background */  
+  --cravensworth-800: #402076; /* primary button background, gradient dark edge) */
+  --cravensworth-700: #522b94; /* primary button background + border (and upper/lighter gradient edge) */
+  --cravensworth-600: #593498; /* primary button hover background, gradient dark edge) */
+  --cravensworth-500: #6b3fb7; /* primary button hover background (and upper/lighter gradient edge) */
+  --cravensworth-400: #8664bd; /* Inline text hyperlinks */
+  --cravensworth-200: #dbc7ff; /* dashboard sidebar tab indicator */
 
   --gray-800: #202125; /* dark font */
   --gray-600: #5d5d5d; /* button text color */
   --gray-500: #797979; /* light font */
   --gray-400: #cacaca; /* button border */ 
   --gray-300: #d9d9d9; /* light section border */
-  --gray-200: #e8e8e8; /* light section border */
+  --gray-200: #e8e8e8; /* lighter section border */
   --gray-100: #f6f6f6; /* bright page background */
   --gray-50:  #fafafa; /* table row background */
 
@@ -48,10 +40,9 @@ html, body {
   color: var(--gray-800);
   font-family: 'Public Sans', Arial, Helvetica, sans-serif;
   font-size: 16px;
-  height: 100%;
   line-height: 160%;
   margin: 0;
-  min-height: 100%;
+  min-height: 100vh;
   padding: 0;
 }
 

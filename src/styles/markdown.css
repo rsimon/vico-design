@@ -1,3 +1,18 @@
 .markdown a {
-  color: var(--link-blue);
+  color: var(--cravensworth-400);
+  font-weight: 400;
+  position: relative;
+}
+
+.markdown a:hover {
+  text-decoration: none;
+}
+
+.markdown a:hover::after {
+  content: '';
+  border-bottom: 1.5px solid var(--cravensworth-400);
+  position: absolute;
+  bottom: -1px;
+  left: 1px;
+  width: calc(100% - 2px);
 }
