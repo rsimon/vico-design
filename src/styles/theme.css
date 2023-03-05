@@ -30,6 +30,8 @@
   --gray-100: #f6f6f6; /* bright page background */
   --gray-50:  #fafafa; /* table row background */
 
+  --white-t-90: rgba(255, 255, 255, 0.9);
+
   /* Font */
   --font-small: 0.875em;
 

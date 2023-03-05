@@ -39,10 +39,11 @@
 }
 
 .ia-toolbar button.visibility {
-  background-color: #602db7;
+  background: linear-gradient(var(--cravensworth-700), var(--cravensworth-800));
+  background-color: var(--cravensworth-700);
   border-radius: 8px;
   clip-path: none;
-  color: #fff;
+  color: var(--white-t-90);
   font-weight: 500;
   height: 38px;
   margin: 0 6px;

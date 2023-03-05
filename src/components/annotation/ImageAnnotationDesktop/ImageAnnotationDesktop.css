@@ -26,6 +26,7 @@
   align-items: center;
   background: transparent;
   border: none;
+  border-radius: 12px;
   clip-path: url(#squircle);
   color: var(--gray-600);
   display: inline-flex;
@@ -35,6 +36,10 @@
   padding: 0;
   width: 40px;
   transition: all 0.125s;
+}
+
+.ia-overlay button.unclipped {
+  clip-path: none;
 }
 
 .ia-overlay button svg {
@@ -54,8 +59,9 @@
 }
 
 .ia-overlay button.active {
-  background-color: #522b94;
-  color: #fff;
+  background: linear-gradient(var(--cravensworth-700), var(--cravensworth-800));
+  background-color: var(--cravensworth-700);
+  color: var(--white-t-90);
 }
 
 .ia-overlay-divider {

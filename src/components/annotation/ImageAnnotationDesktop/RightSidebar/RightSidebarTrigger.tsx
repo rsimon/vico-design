@@ -6,7 +6,7 @@ export const RightSidebarTrigger = () => {
 
   return (
     <div className="ia-overlay ia-right-trigger">
-      <button>
+      <button className="unclipped">
         <Chats weight="bold" />
       </button>
     </div>

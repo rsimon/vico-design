@@ -33,7 +33,7 @@
   align-items: center;
   color: #fff;
   display: flex;
-  font-weight: 600;
+  font-weight: 500;
   font-size: var(--font-small);
   justify-content: center;
 }
@@ -55,6 +55,6 @@
 }
 
 .avatar-list li + li {
-  margin-left: -9px;
+  margin-left: -14px;
 }
 
