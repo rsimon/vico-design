@@ -37,8 +37,8 @@ export const VisibilityControl = () => {
               <UsersThree /> <strong>Public</strong>
               <p>
                 Public annotations are visible to anyone with
-                access to this document. This may include invited
-                users or the general public.
+                access to this document. This may include <strong>invited
+                users or the general public</strong>.
               </p>
             </RadioItem>
           </RadioGroup>
