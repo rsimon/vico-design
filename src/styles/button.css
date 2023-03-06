@@ -113,6 +113,11 @@ button.unstyled:hover {
 
 button svg:last-child:not(:only-child) {
   padding-right: 0;
-  padding-left: 12px;
-  margin-right: -12px;
+  padding-left: 18px;
+  margin-right: -8px;
+}
+
+button svg.small {
+  height: 1em !important;
+  width: 1em !important;
 }

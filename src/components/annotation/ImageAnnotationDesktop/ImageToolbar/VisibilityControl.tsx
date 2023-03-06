@@ -1,5 +1,5 @@
 import * as Dropdown from '@radix-ui/react-dropdown-menu';
-import { CaretDown, Check, Detective, DotsThreeVertical, UsersThree } from 'phosphor-react';
+import { CaretDown, Check, Detective, UsersThree } from 'phosphor-react';
 
 const { Content, ItemIndicator, Portal, RadioGroup, RadioItem, Root, Trigger } = Dropdown;
 
@@ -13,7 +13,7 @@ export const VisibilityControl = () => {
         <button className="visibility active">
           <Detective />
           <span>Private</span>   
-          <DotsThreeVertical weight="bold" className="small-caret-right" />
+          <CaretDown weight="bold" className="small" />
         </button>
       </Trigger>
 
