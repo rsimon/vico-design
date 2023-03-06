@@ -31,7 +31,7 @@ export const PresenceOverlay = () => {
         {DUMMY_COLLABORATORS.map((user, idx) => 
           <li key={user.id}>
             <div className="avatar-wrapper">
-              <Avatar user={user} color={COLORS_12[idx % COLORS_12.length]} />
+              <Avatar user={user} color={COLORS_12[idx % COLORS_12.length]} size={32} border={false} />
             </div>
           </li>
         )}

@@ -18,6 +18,7 @@
   --cravensworth-200: #dbc7ff; /* dashboard sidebar tab indicator */
 
   --gray-800: #202125; /* dark font */
+  --gray-700: #403c44; /* slightly lighter font */
   --gray-600: #585858; /* button text color, slightly lighter text */
   --gray-500: #797979; /* light text (warning: no longer WACG compliant - use with caution) */
   --gray-400: #cacaca; /* button border */ 

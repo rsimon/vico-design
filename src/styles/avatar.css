@@ -3,20 +3,13 @@
   background: #fff;
   clip-path: url(#squircle);
   display: inline-block;
-  height: 42.5px;
-  margin-bottom: -8px;
   position:relative;
-  width: 42.5px;
 }
 
 .avatar-image,
 .avatar-fallback {
   clip-path: url(#squircle);
-  height: 38px;
-  left: 2px;
   position: absolute;
-  top: 2px;
-  width: 38px;
 }
 
 .avatar-image {
@@ -24,10 +17,6 @@
 }
 
 .avatar-fallback-inner {
-  width: 36px;
-  height: 36px;
-  top: 1px;
-  left: 1px;
   position: absolute;
   clip-path: url(#squircle);
   align-items: center;

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
+import { easings } from '@react-spring/web';
 import * as timeago from 'timeago.js';
-import { DotsThreeVertical } from 'phosphor-react';
+import { DotsThreeOutlineVertical } from 'phosphor-react';
 import { Avatar } from '@components/common';
 import { ReplyForm } from './ReplyForm';
 import type { Annotation } from 'src/types';
@@ -21,7 +22,7 @@ interface AnnotationCardProps {
 export const AnnotationCard = (props: AnnotationCardProps) => {
 
     // Collapsed annotation cards show only the header
-  const [ collapsed, setCollapsed ] = useState(false);
+  const [ collapsed, setCollapsed ] = useState(true);
 
   const { annotation, selected } = props;
 
@@ -33,24 +34,29 @@ export const AnnotationCard = (props: AnnotationCardProps) => {
   const transition = useTransition([ collapsed ], {
     from: { opacity: 0, maxHeight: 0 },
     enter: { opacity: 1, maxHeight: 200 },
-    leave: { opacity: 0, maxHeight: 0 }
+    leave: { opacity: 0, maxHeight: 0 }, 
+    config: {
+      easing: easings.easeOutCubic,
+      duration: 350
+    }
   });
 
   return (
-    <article className="annotation-card">
+    <article className={collapsed ? 'annotation-card' : 'annotation-card selected'}>
       <header onClick={() => setCollapsed(!collapsed)}>
-        <Avatar user={creator} />
-        <h1>
-          <span className="ac-creator">{creator.fullname || creator.id}</span>
-          <span className="ac-created">{timeago.format(created)}</span>
-        </h1>
+        <Avatar user={creator} border size={40} />
+
+        <div className="annotation-card-title">
+          <h1>{creator.fullname || creator.id}</h1>
+          <h2>{timeago.format(created)}</h2>
+        </div>
 
         <button className="unstyled">
-         <DotsThreeVertical />
+          <DotsThreeOutlineVertical weight="fill" />
         </button>
       </header>
 
-      {transition((style, show) => show && (
+      {transition((style, show) => !show && (
         <animated.div style={style}>
           <p>
             {firstBody.value}

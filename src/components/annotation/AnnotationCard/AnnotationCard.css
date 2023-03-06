@@ -1,0 +1,102 @@
+.annotation-card {
+  background-color: #fff;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 250ms;
+}
+
+.annotation-card.selected {
+  transform: translateX(-10px);
+}
+
+.annotation-card:not(.selected) {
+  cursor: pointer;
+}
+
+.annotation-card + .annotation-card {
+  margin-top: 5px;
+}
+
+.annotation-card header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 5px;
+}
+
+.annotation-card header .avatar-fallback-inner {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+}
+
+.annotation-card header .annotation-card-title {
+  flex-grow: 1;
+  font-weight: 600;
+  font-size: var(--font-small);
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.annotation-card header h1, .annotation-card header h2 {
+  color: var(--gray-700);
+  font-family: 'Public Sans', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.annotation-card header h1 {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.annotation-card header h2 {
+  font-size: 0.875em;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+.annotation-card header button {
+  color: var(--gray-300);
+  padding: 3px 0;
+  transition: color 350ms;
+}
+
+.annotation-card:hover header button,
+.annotation-card.selected header button {
+  color: var(--gray-600);
+}
+
+
+.annotation-card header svg {
+  width: 18.5px;
+}
+
+.annotation-card p {
+  font-size: var(--font-small);
+  padding: 15px;
+}
+
+.annotation-card form {
+  background-color: var(--gray-100);
+  border-top: 1px solid var(--gray-300);
+  padding: 10px;
+}
+
+.annotation-card textarea {
+  background-color: #fff;
+  border: 1px solid var(--gray-300);
+  border-radius: calc(var(--border-radius) - 2px);
+  box-sizing: border-box;
+  font-family: 'Public Sans', Arial, Helvetica, sans-serif;
+  font-size: var(--font-small);
+  margin: 0;
+  outline-color: var(--cravensworth-600);
+  padding: 6px;
+  resize: none;
+  /* https://stackoverflow.com/questions/7144843/extra-space-under-textarea-differs-along-browsers */
+  vertical-align: top;
+  width: 100%;
+}

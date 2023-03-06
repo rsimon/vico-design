@@ -2,26 +2,27 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { ImageAnnotationDesktop } from '@components/annotation/ImageAnnotationDesktop';
 import SquircleClipPath from '@components/common/Avatar/SquircleClipPath.astro';
-import { AnnotationCard } from '@components/annotation/ImageAnnotationDesktop/AnnotationCard/AnnotationCard';
+import { AnnotationCard } from '@components/annotation/AnnotationCard/AnnotationCard';
 import type { Annotation } from 'src/types';
+import { AnnotationPanel } from '@components/annotation/ImageAnnotationDesktop/RightSidebar/AnnotationPanel/AnnotationPanel';
 
 const rainer = { id: 'aboutgeo', fullname: 'Rainer Simon' };
 
 const annotations: Annotation[] = [{
   target: {},
   bodies: [{
-    creator: rainer,
+    creator: { id: 'aboutgeo', fullname: 'Rainer Simon' },
     created: new Date('2023-03-06T08:19:00Z'),
     purpose: 'commenting',
-    value: 'This is a comment'
+    value: 'This is a comment.'
   }]
 },{
   target: {},
   bodies: [{
-    creator: rainer,
+    creator: { id: 'lorinjameson', fullname: 'Lorin Jameson' },
     created: new Date('2023-03-06T08:22:00Z'),
     purpose: 'commenting',
-    value: 'This is another comment'
+    value: 'This is another comment!'
   }]
 }]
 ---
@@ -30,9 +31,7 @@ const annotations: Annotation[] = [{
   <div class="container">
     <ImageAnnotationDesktop client:only />
     <div class="annotation-sidebar">
-      {annotations.map(annotation => (
-        <AnnotationCard client:only annotation={annotation} />
-      ))}
+      <AnnotationPanel client:only annotations={annotations} />
     </div>
   </div>
   <SquircleClipPath />
@@ -53,6 +52,6 @@ const annotations: Annotation[] = [{
     background-color: var(--gray-100);
     border-left: 1px solid var(--gray-200);
     flex: 0 0 400px;
-    padding: 10px;
+    padding: 10px 10px 10px 20px;
   }
 </style>

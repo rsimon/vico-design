@@ -99,7 +99,7 @@ button.unstyled {
   border: none;
   border-radius: 0;
   box-shadow: none;
-  color: inherit;
+  color: var(--gray-500);
   cursor: pointer;
   display: inline;
   font-size: inherit;
@@ -108,6 +108,7 @@ button.unstyled {
 }
 
 button.unstyled:hover {
+  color: var(--cravensworth-500);
   background-color: transparent; 
 }
 

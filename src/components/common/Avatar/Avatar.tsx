@@ -7,6 +7,10 @@ interface AvatarProps {
 
   color?: string;
 
+  border?: boolean
+
+  size?: number
+
 }
 
 const getInitials = (user: User): string => {
@@ -34,25 +38,48 @@ const stringToHue = (str: string) => {
 
 export const Avatar = (props: AvatarProps) => {
 
-  const { user, color  } = props;
+  const { border, color, user  } = props;
+
+  const size = props.size || 42.5;
 
   const hue = stringToHue(user.id);
 
   return (
-    <RadixAvatar.Root className="avatar" style={color ? { backgroundColor: color }: undefined}>
+    <RadixAvatar.Root 
+      className="avatar" 
+      style={{ backgroundColor: color, height: size, width: size }}>
       {user.avatarUrl &&
         <RadixAvatar.Image
           className="avatar-image"
           src={user.avatarUrl}
-          alt={user.fullname || user.id} />
+          alt={user.fullname || user.id} 
+          style={{
+            height: Math.floor(size - 4),
+            left: 2,
+            top: 2,
+            width: Math.floor(size - 4)
+          }}/>
       }
 
       <RadixAvatar.Fallback 
         className="avatar-fallback"
-        style={{ backgroundColor: `hsl(${hue}, 35%, 54%)` }}>
+        style={{ 
+          backgroundColor: `hsl(${hue}, 35%, 54%)`,
+          height: Math.floor(size - 4),
+          left: 2,
+          top: 2,
+          width: Math.floor(size - 4)
+        }}>
         <div 
           className="avatar-fallback-inner"
-          style={{ background: `radial-gradient(hsl(${hue}, 35%, 78%), hsl(${hue}, 35%, 67%))` }}>
+          style={{ 
+            background: `radial-gradient(hsl(${hue}, 35%, 78%), hsl(${hue}, 35%, 67%))`,
+            backgroundColor: `hsl(${hue}, 35%, 78%)`,
+            height: border ? Math.floor(size - 6) : Math.floor(size - 4),
+            left: border ? 1 : 0,
+            top: border ? 1 : 0,
+            width: border ? Math.floor(size -6) : Math.floor(size - 4)
+          }}>
           {getInitials(user)}
         </div>
       </RadixAvatar.Fallback>

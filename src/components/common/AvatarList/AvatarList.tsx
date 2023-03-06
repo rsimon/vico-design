@@ -22,7 +22,7 @@ export const AvatarList = (props: AvatarListProps) => {
       <ul>
         {head.map(user => 
           <li key={user.id}>
-            <Avatar user={user} />
+            <Avatar user={user} border />
           </li>
         )}
       </ul>
