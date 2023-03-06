@@ -28,9 +28,13 @@
   border-radius: calc(var(--border-radius) - 2.5px);
   font-size: var(--font-small);
   outline: none;
-  padding: 5px 5px 5px 38px;
+  padding: 5px 10px 5px 38px;
   position: relative;
   user-select: none;
+}
+
+.no-icons .dropdown-item {
+  padding: 5px 10px;
 }
 
 .wide .dropdown-item + .dropdown-item {

@@ -6,6 +6,7 @@ import { DotsThreeOutlineVertical } from 'phosphor-react';
 import { Avatar } from '@components/common';
 import { ReplyForm } from './ReplyForm';
 import type { Annotation } from 'src/types';
+import { ActionsMenu } from './ActionsMenu';
 
 import './AnnotationCard.css';
 
@@ -52,7 +53,7 @@ export const AnnotationCard = (props: AnnotationCardProps) => {
         </div>
 
         <button className="unstyled">
-          <DotsThreeOutlineVertical weight="fill" />
+          <ActionsMenu />
         </button>
       </header>
 

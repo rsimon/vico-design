@@ -5,8 +5,6 @@ const { Content, ItemIndicator, Portal, RadioGroup, RadioItem, Root, Trigger } =
 
 export const VisibilityControl = () => {
 
-  // <CaretDown weight="bold" />
-
   return (
     <Root>
       <Trigger asChild>
@@ -19,8 +17,8 @@ export const VisibilityControl = () => {
 
       <Portal>
         <Content className="dropdown-content wide" sideOffset={5} align="center">
-          <RadioGroup value="table">
-            <RadioItem value="table" className="dropdown-item">
+          <RadioGroup value="private">
+            <RadioItem value="private" className="dropdown-item">
               <ItemIndicator className="dropdown-indicator">
                 <Check />
               </ItemIndicator>
@@ -31,7 +29,7 @@ export const VisibilityControl = () => {
               </p>
             </RadioItem>
 
-            <RadioItem value="grid" className="dropdown-item">
+            <RadioItem value="public" className="dropdown-item">
               <ItemIndicator className="dropdown-indicator">
                 <Check />
               </ItemIndicator>
