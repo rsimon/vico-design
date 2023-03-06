@@ -12,7 +12,8 @@ export const VisibilityControl = () => {
       <Trigger asChild>
         <button className="visibility active">
           <Detective />
-          <span>Private</span>        
+          <span>Private</span>   
+          <CaretDown weight="bold" className="small-caret-right" />
         </button>
       </Trigger>
 

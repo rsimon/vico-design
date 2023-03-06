@@ -110,3 +110,11 @@ button.unstyled {
 button.unstyled:hover {
   background-color: transparent; 
 }
+
+button .small-caret-right, a.button .small-caret-right {
+  padding-right: 0;
+  padding-left: 8px !important;
+  margin-right: -6px !important;
+  width: 1.1em !important;
+  height: 1.1em !important;
+}

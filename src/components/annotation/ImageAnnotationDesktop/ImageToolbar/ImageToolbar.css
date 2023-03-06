@@ -50,7 +50,7 @@
   width: auto;
 }
 
-.ia-toolbar button.visibility svg {
+.ia-toolbar button.visibility svg:first-child {
   padding-right: 8px;
 }
 
