@@ -1,12 +1,11 @@
 import { ReactElement, useState } from 'react';
+import { VisibilityControl } from './VisibilityControl';
 import { 
   ArrowClockwise, 
   ArrowCounterClockwise,  
-  CaretDown,
   Circle, 
   CrosshairSimple, 
   Cursor,
-  Detective,
   DotsThreeVertical,
   Rectangle,
   Triangle
@@ -96,10 +95,7 @@ export const ImageToolbar = (props: ImageToolbarProps) => {
         <div className="ia-overlay-divider ia-overlay-divider-v" />
 
         <section>
-          <button className="visibility active">
-            <Detective />
-            <span>Private</span>
-          </button>
+          <VisibilityControl />
         </section>
       </div>
     </div>

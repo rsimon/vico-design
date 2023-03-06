@@ -1,7 +1,7 @@
 import * as Dropdown from '@radix-ui/react-dropdown-menu';
 import { CaretDown, Check, SquaresFour, Table } from 'phosphor-react';
 
-const { Content, Item, ItemIndicator, Portal, RadioGroup, RadioItem, Root, Trigger } = Dropdown;
+const { Content, ItemIndicator, Portal, RadioGroup, RadioItem, Root, Trigger } = Dropdown;
 
 export const LayoutToggle = () => {
 
