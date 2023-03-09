@@ -12,12 +12,12 @@ interface RightSidebarProps {
 export const RightSidebar = (props: RightSidebarProps) => {
 
   const transition = useTransition([ props.panel ], {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 }, 
+    from: { opacity: 0, width: 200 },
+    enter: { opacity: 1, width: 290 },
+    leave: { opacity: 0, width: 200 }, 
     config: {
-      easing: easings.easeOutCubic,
-      duration: 120
+      easing: props.panel === undefined ? easings.easeOutCubic : easings.easeInCubic,
+      duration: 400
     }
   });
 

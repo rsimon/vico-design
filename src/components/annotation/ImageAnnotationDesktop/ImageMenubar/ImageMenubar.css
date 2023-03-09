@@ -1,10 +1,23 @@
 .ia-overlay.ia-menubar {
   border-radius: 0 0 0 12px;
   border-width: 0 0 1px 1px;
+  box-sizing: border-box  ;
   padding: 0 5px;
   position: absolute;
   right: 0; 
   top: 0;
+  min-width: 290px;
+  transition: all 500ms;
+  z-index: 1;
+}
+
+.ia-overlay.ia-menubar:not(.collapsed) {
+  background-color: #fff; 
+  border-radius: 0;
+} 
+
+.ia-overlay.ia-menubar.collapsed {
+  min-width: 220px;
 }
 
 .ia-overlay.ia-menubar button {

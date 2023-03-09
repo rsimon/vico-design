@@ -31,7 +31,7 @@ export const ImageMenubar = (props: ImageMenubarProps) => {
   }
 
   return (
-    <div className="ia-menubar ia-overlay">
+    <div className={panel === undefined ? 'ia-menubar ia-overlay collapsed' : 'ia-menubar ia-overlay'}>
       <section>
         <button>
           <Plus onClick={() => props.onZoom(1.2)} />

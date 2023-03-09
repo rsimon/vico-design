@@ -1,10 +1,33 @@
+import { AnnotationCard } from '@components/annotation/AnnotationCard';
+import type { Annotation } from 'src/types';
+
 import './AnnotationList.css';
+
+const ANNOTATIONS: Annotation[] = [{
+  target: {},
+  bodies: [{
+    creator: { id: 'aboutgeo', fullname: 'Rainer Simon' },
+    created: new Date('2023-03-06T08:19:00Z'),
+    purpose: 'commenting',
+    value: 'This is a comment.'
+  }]
+},{
+  target: {},
+  bodies: [{
+    creator: { id: 'lorinjameson', fullname: 'Lorin Jameson' },
+    created: new Date('2023-03-06T08:22:00Z'),
+    purpose: 'commenting',
+    value: 'This is another comment!'
+  }]
+}]
 
 export const AnnotationList = () => {
 
   return (
     <aside className="ia-overlay ia-sidepanel ia-annotationlist">
-
+      {ANNOTATIONS.map(annotation => (
+        <AnnotationCard annotation={annotation} />
+      ))}
     </aside>
   )
 
