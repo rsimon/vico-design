@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { 
   Chats,
   ClockCounterClockwise,
@@ -15,8 +16,16 @@ interface ImageMenubarProps {
 
 }
 
-
 export const ImageMenubar = (props: ImageMenubarProps) => {
+
+  const [activePanel, setActivePanel] = useState<string | null>(null);
+
+  const toggle = (panel: string) => () => {
+    if (activePanel === panel)
+      setActivePanel(null);
+    else 
+      setActivePanel(panel);
+  }
 
   return (
     <div className="ia-menubar ia-overlay">
@@ -32,19 +41,27 @@ export const ImageMenubar = (props: ImageMenubarProps) => {
       <div className="ia-overlay-divider ia-overlay-divider-v" />
 
       <section>
-        <button>
+        <button 
+          className={activePanel === 'annotations' ? 'active' : undefined}
+          onClick={toggle('annotations')}>
           <Chats />
         </button>
 
-        <button>
+        <button
+          className={activePanel === 'layers' ? 'active' : undefined}
+          onClick={toggle('layers')}>
           <StackSimple />
         </button>
 
-        <button>
+        <button
+          className={activePanel === 'search' ? 'active' : undefined}
+          onClick={toggle('search')}>
           <MagnifyingGlass />
         </button>
 
-        <button>
+        <button
+          className={activePanel === 'history' ? 'active' : undefined}
+          onClick={toggle('history')}>
           <ClockCounterClockwise />
         </button>
       </section>
