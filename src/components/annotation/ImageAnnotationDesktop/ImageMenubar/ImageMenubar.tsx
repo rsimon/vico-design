@@ -7,10 +7,13 @@ import {
   Plus, 
   StackSimple
 } from 'phosphor-react';
+import { Panel } from '../Panels';
 
 import './ImageMenubar.css';
 
 interface ImageMenubarProps {
+
+  onChangePanel(panel: Panel | undefined): void
 
   onZoom(inc: number): void
 
@@ -18,13 +21,13 @@ interface ImageMenubarProps {
 
 export const ImageMenubar = (props: ImageMenubarProps) => {
 
-  const [activePanel, setActivePanel] = useState<string | null>(null);
+  const [panel, setPanel] = useState<Panel | undefined>(undefined);
 
-  const toggle = (panel: string) => () => {
-    if (activePanel === panel)
-      setActivePanel(null);
-    else 
-      setActivePanel(panel);
+  const toggle = (p: Panel) => () => {
+    const next = p === panel ? undefined : p;
+
+    setPanel(next);
+    props.onChangePanel(next);
   }
 
   return (
@@ -42,26 +45,26 @@ export const ImageMenubar = (props: ImageMenubarProps) => {
 
       <section>
         <button 
-          className={activePanel === 'annotations' ? 'active' : undefined}
-          onClick={toggle('annotations')}>
+          className={panel === Panel.ANNOTATIONS ? 'active' : undefined}
+          onClick={toggle(Panel.ANNOTATIONS)}>
           <Chats />
         </button>
 
         <button
-          className={activePanel === 'layers' ? 'active' : undefined}
-          onClick={toggle('layers')}>
+          className={panel === Panel.LAYERS ? 'active' : undefined}
+          onClick={toggle(Panel.LAYERS)}>
           <StackSimple />
         </button>
 
         <button
-          className={activePanel === 'search' ? 'active' : undefined}
-          onClick={toggle('search')}>
+          className={panel === Panel.SEARCH ? 'active' : undefined}
+          onClick={toggle(Panel.SEARCH)}>
           <MagnifyingGlass />
         </button>
 
         <button
-          className={activePanel === 'history' ? 'active' : undefined}
-          onClick={toggle('history')}>
+          className={panel === Panel.HISTORY ? 'active' : undefined}
+          onClick={toggle(Panel.HISTORY)}>
           <ClockCounterClockwise />
         </button>
       </section>

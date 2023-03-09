@@ -3,14 +3,10 @@ import OpenSeadragon from 'openseadragon';
 import { PresenceOverlay } from './PresenceOverlay';
 import { ImageToolbar } from './ImageToolbar';
 import { ImageMenubar } from './ImageMenubar/ImageMenubar';
+import { RightSidebar } from './RightSidebar/RightSidebar';
+import type { Panel } from './Panels';
 
 import './ImageAnnotationDesktop.css';
-
-interface ImageAnnotationDesktopProps {
-
-  // for future use
-
-}
 
 const DUMMY_IMAGE = {
   "@context" : "http://iiif.io/api/image/2/context.json",
@@ -37,11 +33,13 @@ const DUMMY_IMAGE = {
   ]
 };
 
-export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
+export const ImageAnnotationDesktop = () => {
 
   const osd = useRef<HTMLDivElement>(null);
 
-  const [ viewer, setViewer ] = useState<OpenSeadragon.Viewer | undefined>(undefined);
+  const [viewer, setViewer] = useState<OpenSeadragon.Viewer | undefined>(undefined);
+
+  const [right, setRight] = useState<Panel | undefined>(undefined);
 
   useEffect(() => {
     if (osd.current) {
@@ -70,7 +68,11 @@ export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
 
       <PresenceOverlay />
 
-      <ImageMenubar onZoom={onZoom} />
+      <ImageMenubar 
+        onChangePanel={setRight} 
+        onZoom={onZoom} />
+
+      <RightSidebar panel={right} />
 
       <ImageToolbar />
     </div>

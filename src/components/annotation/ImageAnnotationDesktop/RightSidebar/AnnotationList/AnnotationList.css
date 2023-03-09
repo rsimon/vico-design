@@ -1,0 +1,11 @@
+.ia-sidepanel.ia-annotationlist {
+  background-color: #fff;
+  border-width: 1px 0 1px 1px;
+  border-radius: 12px 0 0 12px;
+  height: 400px;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 280px;
+}

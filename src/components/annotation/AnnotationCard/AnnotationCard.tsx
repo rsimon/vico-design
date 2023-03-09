@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import { easings } from '@react-spring/web';
 import * as timeago from 'timeago.js';
-import { DotsThreeOutlineVertical } from 'phosphor-react';
 import { Avatar } from '@components/common';
 import { ReplyForm } from './ReplyForm';
 import type { Annotation } from 'src/types';
@@ -25,7 +24,7 @@ export const AnnotationCard = (props: AnnotationCardProps) => {
     // Collapsed annotation cards show only the header
   const [ collapsed, setCollapsed ] = useState(true);
 
-  const { annotation, selected } = props;
+  const { annotation } = props;
 
   // TODO could there be annotations without a body? Need to guard against this!
   const firstBody = annotation.bodies[0];

@@ -1,7 +1,7 @@
 import * as Dropdown from '@radix-ui/react-dropdown-menu';
-import { Check, DotsThreeOutlineVertical } from 'phosphor-react';
+import { DotsThreeOutlineVertical } from 'phosphor-react';
 
-const { Content, Item, ItemIndicator, Portal, RadioGroup, RadioItem, Root, Trigger } = Dropdown;
+const { Content, Item, Portal, Root, Trigger } = Dropdown;
 
 export const ActionsMenu = () => {
 
