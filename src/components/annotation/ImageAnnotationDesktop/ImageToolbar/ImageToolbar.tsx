@@ -94,7 +94,7 @@ export const ImageToolbar = (props: ImageToolbarProps) => {
 
         <div className="ia-overlay-divider ia-overlay-divider-v" />
 
-        <section>
+        <section className="visibility">
           <VisibilityControl />
         </section>
       </div>

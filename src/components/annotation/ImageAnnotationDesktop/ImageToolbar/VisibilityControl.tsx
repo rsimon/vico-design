@@ -8,7 +8,7 @@ export const VisibilityControl = () => {
   return (
     <Root>
       <Trigger asChild>
-        <button className="visibility active">
+        <button className="active">
           <Detective />
           <span>Private</span>   
           <CaretDown weight="bold" className="small" />

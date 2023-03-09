@@ -1,15 +1,14 @@
 .ia-presence {
   border-radius: 18px;
-  padding: 3px 3px 3px 5px;
+  padding: 4px;
   position: absolute;
-  right: 65px;
-  top: 8px;
+  right: 240px;
+  top: 0;
 }
 
 .ia-presence ul {
   filter: 
     drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.35)) 
-    drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.12)) 
     drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.08));
   list-style-type: none;
   margin: 0;

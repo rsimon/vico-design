@@ -11,7 +11,7 @@
 .ia-overlay {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid var(--gray-300);
   border-radius: 15px;
   box-shadow:
@@ -19,6 +19,17 @@
     0px 0px 16px -8px rgba(0, 0, 0, 0.05), 
     0px 0px 16px -12px rgba(0, 0, 0, 0.12),
     0px 0px 2px 0px rgba(0, 0, 0, 0.08);
+  transition: background-color 250ms;
+  white-space: nowrap;
+}
+
+.ia-overlay:hover {
+  background-color: #fff;
+}
+
+.ia-overlay section {
+  display: inline-block;
+  padding: 5px 1px;
   white-space: nowrap;
 }
 
@@ -51,7 +62,7 @@
 }
 
 .ia-overlay :is(button, a.button) + :is(button, a.button) {
-  margin-left: 0;
+  margin-left: 2px;
 }
 
 .ia-overlay button:hover {
@@ -64,15 +75,15 @@
   color: var(--white-t-90);
 }
 
-.ia-toolbar button.active:hover {
+.ia-overlay button.active:hover {
   background-color: var(--cravensworth-500);
 }
-
 
 .ia-overlay-divider {
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.12);
   border-width: 0;
+  display: inline-block;
   height: 0;
   margin: 0;
 }
@@ -85,4 +96,6 @@
 .ia-overlay-divider-v {
   border-left-width: 2px; 
   height: 16px;
+  margin: 0 4px;
+  right: 0; 
 }

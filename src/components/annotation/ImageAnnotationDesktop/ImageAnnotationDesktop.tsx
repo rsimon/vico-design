@@ -4,6 +4,7 @@ import { PresenceOverlay } from './PresenceOverlay';
 import { ImageToolbar } from './ImageToolbar';
 import { ZoomControl } from './ZoomControl';
 import { RightSidebarTrigger } from './RightSidebar/RightSidebarTrigger';
+import { ImageMenubar } from './ImageMenubar/ImageMenubar';
 
 import './ImageAnnotationDesktop.css';
 
@@ -71,9 +72,11 @@ export const ImageAnnotationDesktop = (props: ImageAnnotationDesktopProps) => {
 
       <PresenceOverlay />
 
-      <RightSidebarTrigger />
+      <ImageMenubar onZoom={onZoom} />
 
-      <ZoomControl onZoom={onZoom} />
+      {/* <RightSidebarTrigger /> */}
+
+      {/* <ZoomControl onZoom={onZoom} /> */}
 
       <ImageToolbar />
     </div>
