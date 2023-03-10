@@ -1,13 +1,3 @@
-.ia-toolbar-wrapper {
-  bottom: 10px;
-  display: flex;
-  justify-content: center;
-  left: 0;
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-}
-
 .ia-toolbar {
   align-items: center;
   bottom: 30px;

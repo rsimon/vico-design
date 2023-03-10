@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import OpenSeadragon from 'openseadragon';
 import { PresenceOverlay } from './PresenceOverlay';
 import { ImageToolbar } from './ImageToolbar';
-import { ImageMenubar } from './ImageMenubar/ImageMenubar';
+import { ImageMenubar } from './RightSidebar/RightSidebarMenu/RightSidebarMenu';
 import { RightSidebar } from './RightSidebar/RightSidebar';
 import type { Panel } from './Panels';
 
@@ -39,8 +39,6 @@ export const ImageAnnotationDesktop = () => {
 
   const [viewer, setViewer] = useState<OpenSeadragon.Viewer | undefined>(undefined);
 
-  const [right, setRight] = useState<Panel | undefined>(undefined);
-
   useEffect(() => {
     if (osd.current) {
       setViewer(OpenSeadragon({
@@ -66,15 +64,14 @@ export const ImageAnnotationDesktop = () => {
         {/* OSD mounts here */}
       </div>
 
-      <PresenceOverlay />
+      <div className="ia-desktop-right">
+        <PresenceOverlay />
+        <RightSidebar />
+      </div>
 
-      <ImageMenubar 
-        onChangePanel={setRight} 
-        onZoom={onZoom} />
-
-      <RightSidebar panel={right} />
-
-      <ImageToolbar />
+      <div className="ia-desktop-bottom">
+        <ImageToolbar />
+      </div>
     </div>
   )
 

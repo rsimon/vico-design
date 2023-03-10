@@ -7,11 +7,11 @@ import {
   Plus, 
   StackSimple
 } from 'phosphor-react';
-import { Panel } from '../Panels';
+import { Panel } from '../../Panels';
 
-import './ImageMenubar.css';
+import './RightSidebarMenu.css';
 
-interface ImageMenubarProps {
+interface RightSidebarMenuProps {
 
   onChangePanel(panel: Panel | undefined): void
 
@@ -19,7 +19,7 @@ interface ImageMenubarProps {
 
 }
 
-export const ImageMenubar = (props: ImageMenubarProps) => {
+export const RightSidebarMenu = (props: RightSidebarMenuProps) => {
 
   const [panel, setPanel] = useState<Panel | undefined>(undefined);
 

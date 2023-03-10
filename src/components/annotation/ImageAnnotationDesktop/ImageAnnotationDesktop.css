@@ -8,6 +8,20 @@
   outline: none;
 }
 
+.ia-desktop-right {
+
+}
+
+.ia-desktop-bottom {
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+
 .ia-overlay {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
