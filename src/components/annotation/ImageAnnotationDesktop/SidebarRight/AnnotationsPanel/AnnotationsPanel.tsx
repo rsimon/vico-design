@@ -1,7 +1,7 @@
 import { AnnotationCard } from '@components/annotation/AnnotationCard';
 import type { Annotation } from 'src/types';
 
-import './AnnotationList.css';
+import './AnnotationsPanel.css';
 
 const ANNOTATIONS: Annotation[] = [{
   target: {},
@@ -21,14 +21,14 @@ const ANNOTATIONS: Annotation[] = [{
   }]
 }]
 
-export const AnnotationList = () => {
+export const AnnotationsPanel = () => {
 
   return (
-    <aside className="ia-overlay ia-sidepanel ia-annotationlist">
+    <div className="ia-sidebar-panel-content ia-panel-annotations">
       {ANNOTATIONS.map(annotation => (
         <AnnotationCard annotation={annotation} />
       ))}
-    </aside>
+    </div>
   )
 
 }
