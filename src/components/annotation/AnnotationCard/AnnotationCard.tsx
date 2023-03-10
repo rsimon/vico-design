@@ -17,6 +17,10 @@ interface AnnotationCardProps {
   // visual style and show the reply field
   selected?: boolean; 
 
+  onClose?(): void;
+
+  onExpand?(): void;
+
 }
 
 export const AnnotationCard = (props: AnnotationCardProps) => {
@@ -41,12 +45,37 @@ export const AnnotationCard = (props: AnnotationCardProps) => {
     }
   });
 
-  return (
-    <article className={collapsed ? 'annotation-card' : 'annotation-card selected'}>
-      <header onClick={() => setCollapsed(!collapsed)}>
-        <Avatar user={creator} border size={40} />
+  const toggleCollapsed = () => {
+    let next = collapsed;
 
-        <div className="annotation-card-title">
+    if (!props.selected && collapsed)
+      next = false;
+    else if (props.selected)
+      next = !collapsed;
+
+    setCollapsed(next);
+      
+    if (next && props.onClose)
+      props.onClose();
+
+    if (!next && props.onExpand)
+      props.onExpand();
+  }
+
+  const classNames = [
+    'annotation-card',
+    collapsed ? 'collapsed' : '',
+    props.selected ? 'selected' : ''
+  ].filter(x => x).join(' ');
+
+  return (
+    <article className={classNames}>
+      <header>
+        <div onClick={toggleCollapsed}>
+          <Avatar user={creator} border size={40} />
+        </div>
+
+        <div onClick={toggleCollapsed} className="annotation-card-title">
           <h1>{creator.fullname || creator.id}</h1>
           <h2>{timeago.format(created)}</h2>
         </div>
@@ -57,12 +86,12 @@ export const AnnotationCard = (props: AnnotationCardProps) => {
       </header>
 
       {transition((style, show) => !show && (
-        <animated.div style={style}>
+        <animated.div style={style} onClick={() => props.onExpand && props.onExpand()}>
           <p>
             {firstBody.value}
           </p>
 
-          <ReplyForm />
+          {props.selected && <ReplyForm /> }
         </animated.div>
       ))}
     </article>

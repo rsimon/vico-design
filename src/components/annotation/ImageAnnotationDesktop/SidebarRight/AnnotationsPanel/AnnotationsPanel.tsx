@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { AnnotationCard } from '@components/annotation/AnnotationCard';
 import type { Annotation } from 'src/types';
 
@@ -23,10 +24,24 @@ const ANNOTATIONS: Annotation[] = [{
 
 export const AnnotationsPanel = () => {
 
+  const [selected, setSelected] = useState<number | null>(null);
+
+  const onExpand = (idx: number) => () =>
+    setSelected(idx)
+
+  const onClose = (idx: number) => () => {
+    if (idx === selected) 
+      setSelected(null);
+  }
+  
   return (
     <div className="ia-sidebar-panel-content ia-panel-annotations">
-      {ANNOTATIONS.map(annotation => (
-        <AnnotationCard annotation={annotation} />
+      {ANNOTATIONS.map((annotation, idx) => (
+        <AnnotationCard 
+          annotation={annotation}
+          selected={selected === idx} 
+          onExpand={onExpand(idx)} 
+          onClose={onClose(idx)}/>
       ))}
     </div>
   )
