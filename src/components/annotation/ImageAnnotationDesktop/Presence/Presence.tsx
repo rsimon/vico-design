@@ -1,7 +1,7 @@
 import { Avatar } from '@components/common';
 import { COLORS_12 } from './Palette';
 
-import './PresenceOverlay.css';
+import './Presence.css';
 
 const DUMMY_COLLABORATORS = [{
   id: 'aboutgeo',
@@ -21,9 +21,7 @@ const DUMMY_COLLABORATORS = [{
   fullname: 'Ben Silverman'
 }];
 
-// 
-
-export const PresenceOverlay = () => {
+export const Presence = () => {
 
   return (
     <div className="ia-presence">

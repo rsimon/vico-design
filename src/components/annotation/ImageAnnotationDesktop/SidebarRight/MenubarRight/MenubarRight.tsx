@@ -9,9 +9,11 @@ import {
 } from 'phosphor-react';
 import { Panel } from '../../Panels';
 
-import './RightSidebarMenu.css';
+import './MenubarRight.css';
 
-interface RightSidebarMenuProps {
+interface MenubarRightProps {
+
+  collapsed: boolean;
 
   onChangePanel(panel: Panel | undefined): void
 
@@ -19,7 +21,7 @@ interface RightSidebarMenuProps {
 
 }
 
-export const RightSidebarMenu = (props: RightSidebarMenuProps) => {
+export const MenubarRight = (props: MenubarRightProps) => {
 
   const [panel, setPanel] = useState<Panel | undefined>(undefined);
 

@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import OpenSeadragon from 'openseadragon';
-import { PresenceOverlay } from './PresenceOverlay';
-import { ImageToolbar } from './ImageToolbar';
-import { ImageMenubar } from './RightSidebar/RightSidebarMenu/RightSidebarMenu';
-import { RightSidebar } from './RightSidebar/RightSidebar';
-import type { Panel } from './Panels';
+import { Presence } from './Presence';
+import { Toolbar } from './Toolbar';
+import { SidebarRight } from './SidebarRight';
 
 import './ImageAnnotationDesktop.css';
 
@@ -61,16 +59,16 @@ export const ImageAnnotationDesktop = () => {
   return (
     <div className="ia-desktop-container">
       <div ref={osd} className="ia-osd-container">
-        {/* OSD mounts here */}
+        {/* OpenSeadragon mounts here */}
       </div>
 
       <div className="ia-desktop-right">
-        <PresenceOverlay />
-        <RightSidebar />
+        <Presence />
+        <SidebarRight onZoom={onZoom} />
       </div>
 
       <div className="ia-desktop-bottom">
-        <ImageToolbar />
+        <Toolbar />
       </div>
     </div>
   )

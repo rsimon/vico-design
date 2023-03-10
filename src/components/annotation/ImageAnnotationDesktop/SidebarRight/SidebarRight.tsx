@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import { easings } from '@react-spring/web';
-import { Panel } from '../Panels';
-import { RightSidebarMenu } from './RightSidebarMenu/RightSidebarMenu';
-import { AnnotationList } from './AnnotationList/AnnotationList';
+import type { Panel } from '../Panels';
+import { MenubarRight } from './MenubarRight/MenubarRight';
+// import { AnnotationList } from './AnnotationList/AnnotationList';
 
-interface RightSidebarProps {
+interface SidebarRightProps {
 
   onZoom(inc: number): void;
 
 }
 
-export const RightSidebar = (props: RightSidebarProps) => {
+export const SidebarRight = (props: SidebarRightProps) => {
 
   const [panel, setPanel] = useState<Panel | undefined>(undefined);
 
@@ -31,12 +31,12 @@ export const RightSidebar = (props: RightSidebarProps) => {
 
   return (
     <div className="ia-sidebar-container">
-      <ImageMenubar 
+      <MenubarRight 
         collapsed={Boolean(panel)}
         onChangePanel={onChangePanel} 
         onZoom={props.onZoom} />
 
-      <div id="ia-sidebar ia-sidebar-right">
+      {/* <div id="ia-sidebar ia-sidebar-right">
         {transition((style, panel) => (
           <>
             {panel === Panel.ANNOTATIONS && 
@@ -46,7 +46,7 @@ export const RightSidebar = (props: RightSidebarProps) => {
             }
           </>
         ))}
-      </div>
+          </div> */}
     </div>
   )
 

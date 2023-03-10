@@ -1,5 +1,5 @@
 import { ReactElement, useState } from 'react';
-import { VisibilityControl } from './VisibilityControl';
+import { VisibilityToggle } from './VisibilityToggle';
 import { 
   ArrowClockwise, 
   ArrowCounterClockwise,  
@@ -11,7 +11,7 @@ import {
   Triangle
 } from 'phosphor-react';
 
-import './ImageToolbar.css';
+import './Toolbar.css';
 
 interface ToolButtonProps {
 
@@ -37,13 +37,7 @@ const ToolButton = (props: ToolButtonProps) => {
 
 }
 
-interface ImageToolbarProps {
-
-  // for future use
-
-}
-
-export const ImageToolbar = (props: ImageToolbarProps) => {
+export const Toolbar = () => {
 
   const [ active, setActive ] = useState('cursor');
 
@@ -94,7 +88,7 @@ export const ImageToolbar = (props: ImageToolbarProps) => {
       <div className="ia-overlay-divider ia-overlay-divider-v" />
 
       <section className="visibility">
-        <VisibilityControl />
+        <VisibilityToggle />
       </section>
     </div>
   )

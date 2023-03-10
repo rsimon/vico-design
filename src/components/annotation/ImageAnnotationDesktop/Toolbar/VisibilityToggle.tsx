@@ -3,7 +3,7 @@ import { CaretDown, Check, Detective, UsersThree } from 'phosphor-react';
 
 const { Content, ItemIndicator, Portal, RadioGroup, RadioItem, Root, Trigger } = Dropdown;
 
-export const VisibilityControl = () => {
+export const VisibilityToggle = () => {
 
   return (
     <Root>
